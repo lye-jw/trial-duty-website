@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  username: MyString
+  matric_num: MyString
+  contact_num: 1
+  cell: MyString
+  mc: false
+
+two:
+  email: MyString
+  username: MyString
+  matric_num: MyString
+  contact_num: 1
+  cell: MyString
+  mc: false

@@ -1,0 +1,32 @@
+<div class="list">  
+  <h1>Members List</h1>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 scrollable">
+      
+        <table>
+          <tr>
+            <th class="name">Name</th>
+            <th class="matric">Matric number</th>
+            <th class="contact">Contact number</th>
+            <th class="email">E-mail</th>
+            <th class="cell">Cell</th>
+            <th class="pos">Position</th>
+
+          </tr>
+          <% @users.each do |p| %>
+            <tr>
+              <td class="name"><%= p.username %></td>
+              <td class="matric"><%= p.matric_num %></td>
+              <td class="contact"><%= p.contact_num %></td>
+              <td class="email"><%= p.email %></td>
+              <td class="cell"><%= p.cell %></td>
+              <td class="pos"><%= p.mc ? "MC" : "Member" %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

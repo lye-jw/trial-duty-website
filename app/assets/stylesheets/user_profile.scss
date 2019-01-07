@@ -1,0 +1,45 @@
+.user-profile {
+  width: 100%;
+
+  .container {
+    margin-top: 5%;
+    text-align: center;
+  }
+
+  tr {
+    height: 40px;
+    text-align: left;
+  }
+
+  th,
+  td {
+    width: 100%;
+  }
+
+  th {
+    font-weight: normal;
+  }
+
+  td {
+    color: $grey;
+  }
+
+  input:hover {
+    background-color: $light-yellow;
+    outline: none;
+  }
+
+  input {
+    background-color: $yellow;
+    border: 2px solid $yellow;
+    border-radius: 50px;
+    box-shadow: inset 1px 1px 3px -1px $light-yellow;
+    color: $black;
+    height: 50px;
+    margin-top: 5%;
+    text-align: center;
+    text-shadow: 0 -.8px 0 $black,
+                 0 1px 0 $transparent-white;
+    width: 50%;
+  }
+}

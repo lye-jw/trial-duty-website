@@ -1,0 +1,2 @@
+class TimeRange < ApplicationRecord
+end

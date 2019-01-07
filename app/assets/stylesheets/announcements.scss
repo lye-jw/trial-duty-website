@@ -1,0 +1,107 @@
+// Place all the styles related to the Announcements controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sidebar-container {
+  border: 3px solid $black;
+
+  h1 {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 1.3em;
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 1.7em;
+      text-align: center;
+    }
+  }
+}
+
+.sidebar {
+  text-align: center;
+}
+
+.post {
+  border: 1px solid $black;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: bold;
+
+  h1 {
+    padding: 20px 20px 0;
+  }
+
+  @media (min-width: 1025px) {
+    h1 {
+      padding: 20px 20px 0 50px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+}
+
+.date {
+  font-size: .7em;
+  font-style: italic;
+  padding-top: 10px;
+}
+
+.content {
+  overflow-wrap: break-word;
+  padding: 5px;
+}
+
+.content-modal {
+  overflow-wrap: break-word;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.modal-title {
+  line-height: 1;
+}
+
+.announcements-table {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  table {
+    border: .5px solid $dim-grey;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px 1px $grey;
+    margin-top: 2%;
+    width: 100%;
+  }
+
+  th {
+    background-color: $yellow;
+    box-shadow: 0 .5px $grey;
+    font-weight: bolder;
+    height: 50px;
+    padding-left: 10px;
+  }
+
+  td {
+    background-color: $cream;
+    padding: 0 10px 10px;
+  }
+}
+
+.details {
+  text-align: justify;
+}

@@ -1,15 +1,78 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TrialDutyWebsite</title>
+    <title>NUSSU CommIT</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
+    <meta charset="utf-8">
+    <% unless @disable_viewport %>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <% end %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body<%= yield :page_attributes %>>
+    <% unless controller_name == "sessions" %>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <%= link_to image_tag("commit-logo.png", height: '45', alt: 'nussucommit'), root_path, class: 'navbar-brand' %>
+
+      <div class="collapse navbar-collapse" id="navbar-content">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <%= link_to 'Home', root_path, class: 'nav-link' %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to 'Grab Duty', grab_duty_path, class: 'nav-link' %>
+          </li>
+          
+          <li class="nav-item">
+            <%= link_to 'Problem Report', problem_reports_path, class: 'nav-link' %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to 'Schedule', availabilities_path, class: 'nav-link' %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to 'Members', users_path, class: 'nav-link' %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to 'Guide', guide_path, class: 'nav-link' %>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <% if current_user %>
+                <%= current_user.username %>
+              <% else %>
+                Guest
+              <% end %>
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <% if current_user %>
+                <%= link_to 'View Profile', user_path(current_user), class: 'dropdown-item' %>
+              <% end %>
+              <%= link_to 'Edit Profile', edit_user_registration_path, class: 'dropdown-item' %>
+              <% if current_user %>
+                <%= link_to 'Change Password', edit_user_path(current_user), class: 'dropdown-item' %>
+              <% end %>
+              <%= link_to 'Logout', destroy_user_session_path, class: 'dropdown-item', method: :delete %>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+    <% end %>
+    <% flash.each do |type, text| %>
+      <div class="<%= flash_class(type.to_sym) %>">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <%= text %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

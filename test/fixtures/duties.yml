@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  timeslot: one
+  date: 2019-01-02
+  free: false
+  request_user_id: 1
+
+two:
+  user: two
+  timeslot: two
+  date: 2019-01-02
+  free: false
+  request_user_id: 1

@@ -1,0 +1,111 @@
+// Place all the styles related to the problem_reports controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container-fluid {
+  padding-bottom: 10px;
+  padding-top: 10px;
+
+  .no-padding {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+  }
+}
+
+.alert-box {
+  margin-bottom: 0;
+}
+
+.problem-report-btn {
+  box-shadow: 0 2px 2px $grey;
+  font-size: 13px;
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .problem-report-btn {
+    box-shadow: 0 2px 2px $grey;
+    font-size: 11px;
+    margin-right: 0;
+    padding: .375rem .50rem;
+  }
+}
+
+.problem-report-table {
+  border: .5px solid $dim-grey;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px 1px $grey;
+  margin-top: 2%;
+  width: 100%;
+
+  .last-updated-at,
+  .last-updated-by {
+    font-size: 12px;
+  }
+
+  th {
+    background-color: $yellow;
+    box-shadow: 0 .5px $grey;
+    font-weight: bolder;
+    height: 50px;
+    text-align: center;
+  }
+
+  td {
+    height: 40px;
+    text-align: center;
+  }
+
+  tr:nth-child(even) {
+    background-color: $cream;
+  }
+
+  tr:nth-child(odd) {
+    background-color: $dark-cream;
+  }
+}
+
+.new-problem-report-table {
+  background-color: $cream;
+  margin-bottom: 10px;
+  padding: 10px;
+
+  table {
+    width: 100%;
+  }
+
+  .name,
+  .venue,
+  .pc-number,
+  .description {
+    text-align: center;
+  }
+
+  .new-problem-report-form {
+    background-color: $cream;
+  }
+
+  .submit-btn {
+    text-align: center;
+  }
+}
+
+.btn-container {
+  padding-left: 0;
+
+  > li {
+    display: inline-block;
+  }
+
+  @media (max-width: 425px) {
+    > li {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.td-container {
+  padding-right: 10px;
+  width: 20%;
+}

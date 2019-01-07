@@ -1,14 +1,28 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.5.3'
 
 gem 'mini_racer'
 
+gem 'jquery-rails'
+gem 'bootstrap'
+
+# For authentication
+gem 'devise'
+# For roles
+gem 'rolify'
+# For permissions
+gem 'cancancan'
+
+# Turbolinks makes following links in your web application faster.
+# Read more: https://github.com/rails/turbolinks
+gem 'jquery-turbolinks'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use postgres as the database for Active Record
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
