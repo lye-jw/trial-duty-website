@@ -22,6 +22,11 @@ Rails.application.routes.draw do
     end
   end
 
+  # duties places for admin
+  namespace :duties do
+    resources :places, only: %i[index edit update]
+  end
+
   # announcements
   resources :announcements, only: %i[index create destroy update]
 
@@ -46,6 +51,15 @@ Rails.application.routes.draw do
 
   # problem reports
   resources :problem_reports, only: %i[index create new update]
+
+  # allocate roles for admin
+  resources :users, except: %i[create new] do
+    member do
+      get 'allocate_roles', to: 'users#allocate_roles', as: 'allocate_roles'
+      patch 'allocate_roles', to: 'users#update_roles'
+      put 'allocate_roles', to: 'users#update_roles'
+    end
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

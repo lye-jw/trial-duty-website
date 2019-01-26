@@ -1,4 +1,9 @@
+require 'set'
+
 class AvailabilitiesController < ApplicationController
+  load_and_authorize_resource
+  before_action :authenticate_user!
+
   def index
     @time_ranges = TimeRange.order(:start_time)
     @availabilities = load_availabilities
